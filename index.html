@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Blink Frontend</title>
+	<script src="./lib/react.development.js"></script>
+	<script src="./lib/react-dom.development.js"></script>
+	<script src="./lib/babel.min.js"></script>
+</head>
+
+
+<body>
+
+  <!-- APPLICATION START  -->
+  <div id="App"></div>
+  <!-- APPLICATION END  -->
+  <!-- START CODE -->
+  <script type="text/babel">
+    // if you hit the github api rate limit append this token to you api calls
+    const githubToken = "access_token=c1c6964129310b0daa090a19c4dfdeedda2bd7b2";
+
+    class SearchInput extends React.Component {
+      constructor(){
+        super();
+          this.state= {
+            recent: ''
+          } 
+      }
+
+      render(){
+        return (
+          <div>
+            <input  placeholder="Search Github Users"/>
+            /* x icon to clear search*//* button*/  
+          </div>
+        )
+      }
+
+
+    }
+
+
+
+
+    class App extends React.Component {
+      render() {
+        return (
+          <div>
+            <SearchInput />
+          </div>
+        )
+      }
+    }
+    ReactDOM.render(<App/>, document.getElementById('App'))
+  </script>
+  <!-- END CODE -->
+</body>
+
+</html>
